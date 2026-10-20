@@ -1,4 +1,4 @@
-package main
+package task
 
 import (
 	"encoding/json"
@@ -76,7 +76,7 @@ func AddTask(temp *[]Task,task string){
 
 
 
-func updateStatus(task *[]Task,taskId int){
+func UpdateStatus(task *[]Task,taskId int){
 	LoadData(task)
 
 	if len(*task)==0 {

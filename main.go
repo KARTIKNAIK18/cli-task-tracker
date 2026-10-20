@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"github.com/KARTIKNAIK18/cli-task-tracker/task"
 )
 
 
 func main(){
 
-	var taskList []Task
+	var taskList []task.Task
 
 	if len(os.Args)<2{
 		fmt.Println("U need to give the argumants Along with the Go run .")
@@ -23,10 +24,10 @@ func main(){
 			fmt.Println(`Usage: go run . add "Task description"`)
 			return
 		}
-		AddTask(&taskList,os.Args[2])
+		task.AddTask(&taskList,os.Args[2])
 
 	case  "list":
-		ListTask(&taskList)
+		task.ListTask(&taskList)
 
 	case "update":
         if len(os.Args) < 4 {
@@ -39,7 +40,7 @@ func main(){
             fmt.Println("Invalid task ID:", os.Args[2])
             return
         }
-        UpdateTask(&taskList, id, os.Args[3])
+        task.UpdateTask(&taskList, id, os.Args[3])
 
 	case "delete":
         if len(os.Args) < 3 {
@@ -52,7 +53,7 @@ func main(){
             fmt.Println("Invalid task ID:", os.Args[2])
             return
         }
-        Deletetask(&taskList, id)
+        task.Deletetask(&taskList, id)
 
 
 	 case "done":
@@ -66,10 +67,10 @@ func main(){
             fmt.Println("Invalid task ID:", os.Args[2])
             return
         }
-        updateStatus(&taskList, id)
+        task.UpdateStatus(&taskList, id)
 	
 	 case "list-done":
-        ListCompleted(&taskList)
+        task.ListCompleted(&taskList)
 
 	 default:
 		fmt.Println("Unknown command:", os.Args[1])
