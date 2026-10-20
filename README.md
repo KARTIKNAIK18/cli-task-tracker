@@ -1,7 +1,7 @@
 # Go Task Tracker CLI
-# Project-Url - https://roadmap.sh/projects/task-tracker
 A simple command-line task tracker built with **Go** that allows users to manage their daily tasks. It supports adding, updating, deleting, listing, and completing tasks, with persistent storage using a JSON file.
 
+Project-Url - https://roadmap.sh/projects/task-tracker
 ## Features
 
 - Add new tasks with unique IDs.
